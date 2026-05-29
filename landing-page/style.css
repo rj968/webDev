@@ -1,0 +1,114 @@
+* {
+    font-family: Roboto sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.header{
+    display: flex;
+    color: white;
+    background-color: #1F2937;
+    padding: 32px;
+}
+.logo{
+    flex: 1;
+    font-weight: 900;
+    font-size: 48px;
+}
+.header-links{
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    color: white;
+    align-items: center;
+    font-size: 32px;
+}
+
+.description {
+    background-color: #1F2937;
+    color: white;
+    padding: 24px;
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+}
+
+.description .info{
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.description h1{
+    font-size: 48px;
+    font-weight: 9000;
+}
+
+.description p {
+    font-size: 18px;
+    color: #E5E7EB;
+}
+
+.product-description-box {
+    display: flex;
+    padding: 24px;
+    align-items: center;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+.product-description-header{
+    flex-grow: 1;
+    font-size: 36px;
+    color: #1F2937;
+    font-weight: 900;
+}
+.products{
+    display: flex;
+    gap: 24px;
+}
+.product{
+    border: 10px;
+    border-color: aqua;
+    padding: 16px;
+}
+
+.motto-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 24px;
+    padding: 16px;
+    background-color: #E5E7EB;
+}
+.motto{
+    font-size: 36px;
+    color: #1F2937;
+}
+.motto-author{
+    font-weight: 900;
+    text-align: right;
+}
+
+.contact-box{
+    display: flex;
+    margin: 32px;
+    justify-content: space-around;
+    flex: 1;
+}
+
+footer{
+    background-color: #1F2937;
+    color: white;
+    text-align: center;
+    padding: 24px;
+    margin: 0;
+    margin-bottom: 0;
+}
