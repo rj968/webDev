@@ -1,3 +1,12 @@
+// TO IMPROVE: 
+// 1. code readability
+// 2. variable names
+// 3. function logic and implementation
+// 4. code flow
+// 5. styling of html
+// 6. using best practices from c++ like named var for winning score
+//     and modularising code.
+
 function getComputerChoice() 
 {
     let num = Math.random()
