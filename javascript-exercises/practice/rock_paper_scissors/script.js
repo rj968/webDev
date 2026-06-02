@@ -5,27 +5,27 @@ function getComputerChoice()
             return "rock";
     else if(num<=0.66)
             return "paper";
-    else return "scissors";
+    else return "scissor";
 }
 
 function getHumanChoice()
 {
-    return prompt("Choose one: Rock, Paper, Scissors: ");
+    return prompt("Choose one: Rock, Paper, Scissor: ");
 }
 
 function playRound(humanChoice, computerChoice)
 {
     humanChoice = humanChoice.toLowerCase();
-    console.log(humanChoice + " " + computerChoice)
+    h_CompChoice.textContent = computerChoice;
     if(humanChoice == computerChoice)
-        return console.log(`Tie! You both chose ${humanChoice}`);
+        return h_result.textContent = `Tie! You both chose ${humanChoice}`;
     
     let result;
 
     switch(humanChoice)
     {
         case "rock": 
-            if(computerChoice == "scissors")
+            if(computerChoice == "scissor")
                  result = 1;
             else result = 2;
             break;
@@ -34,36 +34,53 @@ function playRound(humanChoice, computerChoice)
                  result = 1;
             else result = 2;
             break;
-        case "scissors": 
+        case "scissor": 
             if(computerChoice == "paper")
                  result = 1;
             else result = 2;
             break;
-        default: return console.log("Invalid input")
+        default: return h_result.textContent = "Invalid input";
     }
 
     if(result == 1)
     {
         ++humanScore;
-        return console.log(`You Win! ${humanChoice} beats ${computerChoice}.`);
+        h_playerScore.textContent = humanScore;
+        return h_result.textContent = `You Win! ${humanChoice} beats ${computerChoice}.`;
     }
     else if(result == 2)
     {
         ++computerScore;
-        return console.log(`Computer Wins! ${computerChoice} beats ${humanChoice}.`)
+        h_computerScore.textContent = computerScore;
+        return h_result.textContent = `Computer Wins! ${computerChoice} beats ${humanChoice}.`;
     }
 
 }
 
-
 let humanScore = 0;
 let computerScore = 0;
 
+let buttons = document.getElementsByClassName("buttons")[0]; 
+let scores = document.getElementsByClassName("scores")[0]
+
+let h_CompChoice = document.getElementById("computer-choice")
+let h_result = document.getElementById("result")
+let h_playerScore = document.getElementsByClassName("player")[0];
+let h_computerScore = document.getElementsByClassName("computer")[0];
+
+h_playerScore.textContent = humanScore;
+h_computerScore.textContent = computerScore;
+
 function playGame()
 {
-    for( let i = 0; i < 5; ++i)
-        playRound(getHumanChoice(), getComputerChoice());
+    while(humanScore < 5 || computerScore < 5)
+    {
+        buttons.addEventListener("click", 
+            (event) => playRound(event.target.id, getComputerChoice())
+        )
+    }
+    if(humanScore >= 5) h_result.textContent = "You Win!"
+    else if(computerScore >= 5) h_result.textContent = "You lose!"
 }
 
 playGame();
-console.log(`Human: ${humanScore}\nComputer: ${computerScore}`)
