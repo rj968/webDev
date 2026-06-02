@@ -71,16 +71,25 @@ let h_computerScore = document.getElementsByClassName("computer")[0];
 h_playerScore.textContent = humanScore;
 h_computerScore.textContent = computerScore;
 
-function playGame()
-{
-    while(humanScore < 5 || computerScore < 5)
-    {
-        buttons.addEventListener("click", 
-            (event) => playRound(event.target.id, getComputerChoice())
-        )
-    }
-    if(humanScore >= 5) h_result.textContent = "You Win!"
-    else if(computerScore >= 5) h_result.textContent = "You lose!"
-}
+buttons.addEventListener("click", (event) => {
+    if (!event.target.matches("button")) return;
 
-playGame();
+    document.querySelectorAll(".buttons button").forEach(button => {
+        button.style.backgroundColor = "";
+    });
+
+    event.target.style.backgroundColor = "green";
+});
+
+buttons.addEventListener("click", (event) => {
+    if (humanScore >= 5 || computerScore >= 5)
+        return;
+
+    playRound(event.target.id, getComputerChoice());
+
+    if (humanScore >= 5)
+        h_result.textContent = "You Win!";
+    else if (computerScore >= 5)
+        h_result.textContent = "You Lose!";
+});
+
