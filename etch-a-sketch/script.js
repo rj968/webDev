@@ -26,13 +26,26 @@ function createGrid(side)
     }
 }
 
+function getRandomColor()
+{
+    return Math.trunc((Math.random() * 16 * 16 * 16 * 16 * 16 * 16)).toString(16);
+}
+
 function colorGridMouse()
 {
     gridEl.addEventListener("mouseover", 
         (event) => {
             if(!event.target.classList.contains("box"))
                 return;
-            event.target.style.backgroundColor = "red";
+            
+            let color = "#" + getRandomColor(); 
+            event.target.style.backgroundColor = color ;
+
+            // reduce opacity to make the element darker with each pass.
+            let opacity = parseFloat(getComputedStyle(event.target).opacity);
+            opacity = Math.max(0, opacity - 0.1); // Defensively prevent it from going negative as that may cause problem
+
+            event.target.style.opacity = opacity;
         }
     )
 }
