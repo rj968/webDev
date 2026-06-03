@@ -62,11 +62,8 @@ let side = 16;
 createGrid(side);
 colorGridMouse();
 
-console.log(changeGridEl)
-changeGridEl.onClick = function() {
-    console.log('Button clicked via onclick property.');
-};
+changeGridEl.onclick = getSideLength;
 
-clearGridEl.onClick = function() {
-    console.log('Button clicked via onclick property.');
+clearGridEl.onclick = function() {
+    console.log("click")
 };
