@@ -20,3 +20,21 @@
     border: 1px solid black;
     background-color: white;
 }
+
+.button-container{
+    display: flex;
+    justify-content: center;
+    margin-top: 36px;
+    gap: 16px;
+}
+
+.change-grid{
+    font-size: 60px;
+    padding: 8px;
+}
+
+.clear-grid{
+    font-size: 52px;
+    padding: 8px;
+    margin: 4px;
+}
