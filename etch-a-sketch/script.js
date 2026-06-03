@@ -51,19 +51,45 @@ function getSideLength()
 {    
     let side = window.prompt("Enter the number of boxes in each row (Max = 100): ");
     if(!isIntegerInput(side))
-        return alert("Invalid input. Try again.");
+    {
+        alert("Invalid input. Try again.");
+        return;
+    }
     side = Number(side);
     if(side <= 0 || side > MAX_SIDE)
         return alert("Invalid input. Try again.")
     return side
 }
 
+function removeGrid()
+{
+    let rows  = document.querySelectorAll(".row");
+    for(let row of rows)
+        row.remove();
+}
+
+function changeGrid()
+{
+    let side = getSideLength();
+    if(!side)
+        return ;
+    removeGrid();
+
+    createGrid(Number(side));
+
+}
+
+function clearGrid()
+{
+    let boxes = document.querySelectorAll(".box");
+    for(let box of boxes)
+        box.style.backgroundColor = ""
+}
+
 let side = 16;
 createGrid(side);
 colorGridMouse();
 
-changeGridEl.onclick = getSideLength;
+changeGridEl.onclick = changeGrid;
 
-clearGridEl.onclick = function() {
-    console.log("click")
-};
+clearGridEl.onclick = clearGrid;
