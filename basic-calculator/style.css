@@ -30,6 +30,7 @@
     margin: 8px;
     height: 108px;
     overflow: auto;
+    white-space: pre-wrap;
 }
 
 .row button{
