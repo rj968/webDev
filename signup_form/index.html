@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up form</title>
+
+    <link href="style.css" rel="stylesheet"></link>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar_left">
+            <div class="logo">
+                <img src="assets/pants-svgrepo-com.svg" class="logo-icon"></img>
+                <span class="logo-text">SCG</span>
+            </div>
+            <p class="credits">
+                Photo by xyz
+            </p>
+        </div>
+
+        <div class="sidebar_right">
+            <div class="form">
+                <p class="notice">
+                    This is not a real online service! You knoow you need something
+                    like this in your life to help you realize your deepest
+                    dreams.<br>
+                    Sign up <em>now</em> to get started.
+                    <br>
+                    <br>
+                    You <em>know</em> you want to.
+                </p>
+
+                <form action="/" method="GET">
+                    <fieldset>
+                        <legend>
+                            Let's do this!
+                        </legend>
+
+                        <div>
+                            <label for="first-name">First Name</label>
+                            <input type="text" id="first-name" name="first-name" class="input-box" required>
+                        </div>
+
+                        <div>
+                            <label for="last-name">Last Name</label>
+                            <input type="text" id="last-name" name="last-name" class="input-box">
+                        </div>
+
+                        <div>
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" class="input-box">
+                        </div>
+
+                        <div>
+                            <label for="phone-number">Phone Number</label>
+                            <input type="text" id="phone-number" class="input-box" name="phone-number" 
+                            pattern="^[6-9]\d{9}$">
+                        </div>
+
+                        <div>
+                            <label for="password">Password</label>
+                            <input type="password" id="password" class="input-box" 
+                            name="password"
+                            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!%*?&]).{8,}"
+                            title="Must contain at least one number, one uppercase, one lowercase letter, one special character, and at least 8 characters."
+                            required>
+                        </div>
+
+                        <div>
+                            <label for="confirm-password">Confirm Password</label>
+                            <input type="password" id="confirm-password" class="input-box" name="confirm-password" required>
+                        </div>
+
+                    </fieldset>
+
+                    <button class="submit-button" type="submit">
+                        Create Account
+                    </button>
+                </form>
+                <p>
+                    Already have an account?
+                    <a href="/" class="login-link">Log in</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

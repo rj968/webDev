@@ -1,0 +1,137 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    --logo-background: rgba(10,10,10,50%);
+    --white-font-color: white;
+
+    --input-border: #E5E7EB;
+    --input-incorrect-border: red;
+    --input-focus-border: purple;
+
+    --submit-background: #596D48;
+}
+
+@font-face {
+    font-family: 'Norse';
+    src: url('fonts/Norse.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Norse';
+    src: url('fonts/Norsebold.otf') format('opentype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+.container{
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar_left{
+    background-color: pink;
+    width: 40%;
+    min-height: 100vh;
+
+    background-image: url("assets/background-2.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+}
+
+.logo{
+    color: var(--white-font-color);
+    font-size: 90px;
+    font-weight: 900;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    background-color: var(--logo-background);
+}
+
+.logo-text {
+    font-family: 'Norse';
+}
+
+.logo-icon{
+    max-width: 150px;
+}
+
+.credits{
+    position: absolute;
+    bottom: 0.5rem;
+    align-items: center;
+    text-align: center;
+    color: white;
+    font-weight: 900;
+}
+
+.sidebar_right{
+    padding: 2rem;
+    margin-top: 6rem;
+    margin-bottom: 6rem;
+    font-size: 1.5rem;
+}
+
+label{
+    display: block;
+    font-size: 1.25rem;
+}
+
+form{
+    padding: 2vw;
+}
+
+fieldset{
+    display: flex;
+    flex-basis: 60%;
+    flex-wrap: wrap;
+    gap: 8vw;
+    margin-bottom: 1rem;
+    padding: 1rem;
+}
+
+legend{
+    font-size: 2rem;
+    margin: 0.8rem;
+}
+
+input{
+    border: 3px solid var(--input-border);
+}
+
+input:user-invalid{
+    border-color: var(--input-incorrect-border);
+}
+
+input:focus{
+    border-color: var(--input-focus-border);
+    box-shadow: inset;
+}
+
+.submit-button{
+    background-color: var(--submit-background);
+    border-radius: 8px;
+    padding: 0.5rem;
+    color: white;   
+    font-size: 1.5rem;
+    font-weight: 900;
+}
+
+.login-link{
+    color: var(--submit-background);
+}
+
+.notice{
+    font-weight: 200;
+    font-size: 1.5rem;
+}
+
